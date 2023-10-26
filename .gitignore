@@ -1,7 +1,20 @@
-.DS_Store
-.vscode
-.idea
-.venv
-*.egg-info
+# Ignore system files
+*.DS_Store
+Thumbs.db
 
-**/__pycache__
+# Ignore virtual environment
+.venv/
+
+# Ignore Sphinx build outputs
+docs/_build/
+
+# Ignore IDE settings
+.idea/
+
+# Python artifacts
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+dist/
+
