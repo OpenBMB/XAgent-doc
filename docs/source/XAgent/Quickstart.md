@@ -1,23 +1,11 @@
+## 1. Preliminary Requirements
 
-# 🛠️ Build and Setup ToolServer
+### 1.1 Basic Requirements
 
-ToolServer is where XAgent's action takes place. It is a docker container that provides a safe environment for XAgent to run.
-So you should install `docker` and `docker-compose` first. 
-After that, you should build the docker image for ToolServer and start the docker container.
-```bash
-docker-compose build
-docker-compose up
-```
+-  **[Docker Compose](https://docs.docker.com/compose/install/)**  
+- **Python >= 3.10** (Optional, If you use terminal.)
 
-# 🎮 Setup and Run XAgent
-
-After setting up ToolServer, you can start to run XAgent.
-- Install requirements (Require Python >= 3.10)
-```bash
-pip install -r requirements.txt
-```
-
-## Configure XAgent
+### 1.2 Configure XAgent
 
 1. You should configure XAgent in `assets/config.yml` before running it. 
 2. At least one OpenAI key is provided in `assets/config.yml`, which is used to access OpenAI API.
@@ -26,10 +14,30 @@ In any case, at least one `gpt-3.5-turbo-16k` API key should be provided as a ba
 We do not test or recommend using `gpt-3.5-turbo` to run XAgent due to minimal context length; you should not try to run XAgent on that.
 3. If you want to change the config_file path for `XAgentServer`, you should modify the `CONFIG_FILE` value in `.env` file and restart the docker container.
 
+### 🛠️ 1.3 Build and Setup ToolServer
 
-## Run XAgent
+ToolServer is where XAgent's action takes place. It is a docker container that provides a safe environment for XAgent to run.
+```bash
+docker-compose up
+```
+
+## 🎮 2. Run XAgent with GUI or terminal
+
+### Run XAgent with GUI
 
 ```bash
+# run nginx in docker
+docker exec XAgent-Server systemctl start nginx
+```
+Start the docker container.
+You will see the XAgent Server listening on port `8090`.
+You could visit `http://localhost:5173` to interact with XAgent by using web UI.
+
+
+### Run XAgent with terminal
+
+```bash 
+pip install -r requirements.txt 
 python run.py --task "put your task here" --model "gpt-4" --config_file "assets/config.yml"
 ```
 1. You can use the argument `--upload_files` to select the initial files you want to submit to XAgent.
@@ -43,17 +51,3 @@ python run.py --task "put your task here" --model "gpt-4" --config_file "assets/
 5. You can load from a record to reproduce a former run, just by setting `record_dir` in config(default to `Null`). The record is a system-level recording tied to the code version of XAgent. All running-config、query、code execution statuses (including errors)、server behavior will be documented.
 
 6. We have removed all sensitive information (including API keys) from the record so you can safely share it with others. In the near future, we will introduce more granular sharing options highlighting the contributions of humans during execution.
-
-   
-## Run XAgent with GUI
-
-```bash
-
-# run nginx in docker
-docker exec XAgent-Server systemctl start nginx
-```
-Build the docker image for XAgent-Server and start the docker container.
-You will see the XAgent Server listening on port `8090`.
-You could visit `http://localhost:5173` to interact with XAgent by using web UI.
-
-<div><a id="Demo"></a></div>
