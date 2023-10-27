@@ -47,3 +47,4 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+raw_enabled = True
