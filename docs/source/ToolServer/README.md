@@ -1,4 +1,4 @@
-# 🧰 ToolServer
+# Introduction
 
 ToolServer is the server provide XAgent with powerful and safe tools to solve tasks. It is a docker container that provides a safe environment for XAgent to run.
 
@@ -15,7 +15,7 @@ Currently, ToolServer provides the following tools:
 - **🧩 Rapid API** provide a tool to retrieve apis from Rapid API and calling them, which provides a wide range of apis for XAgent to use. See [ToolBench](https://github.com/OpenBMB/ToolBench) to get more information about the Rapid API collections.
 You can also easily add new tools to ToolServer to enhance agent's abilities.
 
-## ⚡️ Configurations
+# Configurations
 Configurations for ToolServer are stored in `assets/config/`. You can change them and rebuild images to apply the changes.
 Notes:
 - Change `node.privileged` to `false` in `manager.yml` if you don't want to used docker in ToolServerNode. This will disable the ability to run docker commands in ToolServerNode.
@@ -23,7 +23,7 @@ Notes:
 - Add your api keys in `node.yml` to enable bing search (or use backup search duckduckgo) and rapid api.
 - Change api timeout for Toolserver in `docker-compose.yml` by altering values after `-t` in `services.ToolServerManager.command` if you encounter timeout error of ToolServer.
 
-## 🛠️ Build and Setup ToolServer
+# Build and Setup ToolServer
 All docker image build files are stored in `dockerfiles/`.
 You can build them manually with following command:
 ```bash
@@ -37,12 +37,12 @@ docker-compose up
 ```
 Note that you should install `docker` and `docker-compose` first.
 
-## 🧩 API Documentation
-### /get_cookies
+# API Documentation
+## /get_cookies
 This path will return a cookie that contains the node_id of the ToolServerNode instance.
 All the following requests should use this cookie to identify the ToolServerNode instance.
 
-### /get_available_tools
+## /get_available_tools
 This path will return all registered tools in ToolServerNode, together with their parameters.
 ```JSON
 {
@@ -80,7 +80,7 @@ This path will return all registered tools in ToolServerNode, together with thei
 }
 ```
 
-### /retrieving_tools
+## /retrieving_tools
 Giving a question, return related tools. Rapid API will also be returned.
 Arguments:
 ```JSON
@@ -107,7 +107,7 @@ Return:
 }
 ```
 
-### /get_json_schema_for_tools
+## /get_json_schema_for_tools
 Return the json schema for the given tools.
 Arguments:
 ```JSON
@@ -132,7 +132,7 @@ Return:
 }
 ```
 
-### /get_json_schema_for_envs
+## /get_json_schema_for_envs
 Return the json schema for the given envs.
 Arguments:
 ```JSON
@@ -156,7 +156,7 @@ Return:
 }
 ```
 
-### /execute_tool
+## /execute_tool
 Execute the given tool with the given parameters.
 Arguments:
 ```JSON
@@ -181,8 +181,8 @@ When return http code 450, the return value will be like:
 }
 ```
 
-### /close_session
+## /close_session
 Close the ToolServerNode instance.
 
-### /release_session
+## /release_session
 Close and delete ToolServerNode instance.

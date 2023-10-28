@@ -1,19 +1,30 @@
 =============================
-Welcome to XAgent's document
+Welcome to XAgent's Document
 =============================
 
 Introduction
-==================
+============
 
-XAgent is an open-source experimental Large Language Model (LLM) driven autonomous agent that can automatically solve various tasks. 
-It is designed to be a general-purpose agent that can be applied to a wide range of tasks. XAgent is still in its early stages, and we are working hard to improve it.
+.. image:: source/assets/xagent_logo.png
+   :height: 40
+   :align: center
+   :alt: XAgent logo
+
+.. raw:: html
+
+    <div align="center">
+        <a href="https://twitter.com/XAgentTeam"><img src="https://img.shields.io/twitter/follow/XAgent?style=social" alt="Twitter"></a>
+        <a href="https://discord.gg/zncs5aQkWZ"><img src="https://img.shields.io/badge/XAgent-Discord-purple?style=flat" alt="Discord"></a>
+        <a href="https://opensource.org/licenses/apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-green.svg" alt="License: Apache 2.0"></a>
+        <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Welcome">
+    </div>
 
 .. raw:: html
 
    <div style="text-align: center; font-size: 20px; font-weight: bold; color: #2c3e50; margin-top: 20px; margin-bottom: 20px;">
       🏆 Our goal is to create a super-intelligent agent that can solve any given task!
    </div>
-   
+
 We welcome diverse forms of collaborations, including full-time and part-time roles and more. If you are interested in the frontiers of agents and want to join us in realizing true autonomous agents, please contact us at xagentteam@gmail.com.
 
 XAgent is designed with the following features:
@@ -35,10 +46,16 @@ XAgent is composed of three parts:
 .. toctree::
    :glob:
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: Quickstart
 
-   source/XAgent/Quickstart.md
-   
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   source/XAgent/Quickstart
+   source/XAgent/Demo
+   source/XAgent/Evaluation
+   source/XAgent/FAQ
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+   :caption: ToolServer Reference
+
+   source/ToolServer/README

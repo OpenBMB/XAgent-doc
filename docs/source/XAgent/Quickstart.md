@@ -1,3 +1,5 @@
+# Installation
+
 ## 1. Preliminary Requirements
 
 ### 1.1 Basic Requirements
@@ -14,19 +16,19 @@ In any case, at least one `gpt-3.5-turbo-16k` API key should be provided as a ba
 We do not test or recommend using `gpt-3.5-turbo` to run XAgent due to minimal context length; you should not try to run XAgent on that.
 3. If you want to change the config_file path for `XAgentServer`, you should modify the `CONFIG_FILE` value in `.env` file and restart the docker container.
 
-### 🛠️ 1.3 Build and Setup ToolServer
+### 1.3 Build and Setup ToolServer
 
 ToolServer is where XAgent's action takes place. It is a docker container that provides a safe environment for XAgent to run.
 ```bash
 docker-compose up
 ```
 
-## 🎮 2. Run XAgent with GUI or terminal
+## 2. Run XAgent with GUI or terminal
 
 ### Run XAgent with GUI
 
 ```bash
-# run nginx in docker
+## run nginx in docker
 docker exec XAgent-Server systemctl start nginx
 ```
 Start the docker container.
@@ -37,6 +39,7 @@ You could visit `http://localhost:5173` to interact with XAgent by using web UI.
 ### Run XAgent with terminal
 
 ```bash 
+python -m venv .venv && source .venv/bin/activate ## Create virtual environment and activate it
 pip install -r requirements.txt 
 python run.py --task "put your task here" --model "gpt-4" --config_file "assets/config.yml"
 ```
