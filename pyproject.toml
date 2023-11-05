@@ -3,7 +3,7 @@ name = "XAgent-doc"
 version = "0.1.0"
 description = ""
 authors = ["XAgent <xagentteam@gmail.com>"]
-license = "GPLV3"
+license = "GPLV2"
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -25,5 +25,5 @@ url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 priority = "default"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
