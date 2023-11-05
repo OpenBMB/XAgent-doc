@@ -59,3 +59,10 @@ XAgent is composed of three parts:
    :caption: ToolServer Reference
 
    source/ToolServer/README
+
+.. toctree::
+   :glob:
+   :maxdepth: 3
+   :caption: Comparison
+   
+   source/Others/Comparison

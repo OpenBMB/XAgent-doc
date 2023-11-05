@@ -16,11 +16,11 @@ In any case, at least one `gpt-3.5-turbo-16k` API key should be provided as a ba
 We do not test or recommend using `gpt-3.5-turbo` to run XAgent due to minimal context length; you should not try to run XAgent on that.
 3. If you want to change the config_file path for `XAgentServer`, you should modify the `CONFIG_FILE` value in `.env` file and restart the docker container.
 
-### 1.3 Build and Setup ToolServer
+### 1.3 Build and Run ToolServer
 
-ToolServer is where XAgent's action takes place. It is a docker container that provides a safe environment for XAgent to run.
+ToolServer is where XAgent's action takes place. It is a docker container that provides a safe environment for XAgent to run. (If changes have been made to the configuration, the following commands also need to be re-run.)
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 ## 2. Run XAgent with GUI or terminal
