@@ -6,12 +6,33 @@
 
 |                | Multiple<br>LLM<br>Support | GUI | Execution<br>Environment | Plugins | Human<br>Feedback | Tool<br>Usage |
 |----------------|:--------------------------:|:---:|:------------------------:|:-------:|:-----------------:|:-------------:|
-| XAgent         | ✗                          | ✓   | Docker & Local           | ✗       | ✓                 | ✓             |
+| XAgent         | ✗                          | ✓   | Docker & Local           | ✓       | ✓                 | ✓             |
 | AutoGPT        | ✗                          | ✓   | Docker & Local           | ✓       | ✓                 | ✓             |
 | OpenAgents     | ✓                          | ✓   | Docker & Local           | ✓       | ✗                 | ✓             |
-
+| ChatDev        | ✓                          | ✓   | Docker & Local           | ✗       | ✓                 | ✗             |
 
 ## Brief Overview
+
+### [XAgent](https://github.com/OpenBMB/XAgent)
+
+XAgent is an open-source experimental Large Language Model (LLM) driven autonomous agent that can automatically solve various tasks. 
+
+XAgent is composed of three parts:
+
+- 🤖 Dispatcher is responsible for dynamically instantiating and dispatching tasks to different agents. It allows us to add new agents and improve the agents' abilities.
+- 🧐 Planner is responsible for generating and rectifying plans for tasks. It divides tasks into subtasks and generates milestones for them, allowing agents to solve tasks step by step.
+- 🦾 Actor is responsible for conducting actions to achieve goals and finish subtasks. The actor utilizes various tools to solve subtasks, and it can also collaborate with humans to solve tasks.
+
+### [ChatDev](https://github.com/OpenBMB/ChatDev)
+
+ChatDev is a chat-powered company for software development, brings together agents from diverse social identities. When presented with a preliminary task by a human "client", the agents at ChatDev engage in effective communication and mutual verification through collaborative chatting.
+
+- 🏞 The design agent can be triggered in art mode to create visuals for use within the application.
+- 👨‍🔧 The human-agent-interaction mode allows human to engage with the ChatDev team by providing feedback and recommendations to the agents.
+- 💻 Git mode provides agents with the functionality to use Git for managing versions.
+- 🐳 Compatibility with the Docker environment is included for secure operational performance.
+- ⚙️ The system facilitates progressive development, enabling agents to build on pre-existing codebases.
+
 
 ### [OpenAgents](https://github.com/xlang-ai/OpenAgents)
 
@@ -26,15 +47,6 @@ We have now implemented three agents in OpenAgents. [Paper](https://arxiv.org/ab
 
 We adopt & adapt LangChain to construct our agent. LangChain is a middleware/framework for building LLM-powered applications, with various built-in components to use LLMs as we need. Specifically, our agents are based on the ReAct in LangChain: a paradigm where an agent iteratively performs Thinking, Acting, and Observing to accomplish the assigned task(s)
 
-### [XAgent](https://github.com/OpenBMB/XAgent)
-
-XAgent is an open-source experimental Large Language Model (LLM) driven autonomous agent that can automatically solve various tasks. 
-
-XAgent is composed of three parts:
-
-- 🤖 Dispatcher is responsible for dynamically instantiating and dispatching tasks to different agents. It allows us to add new agents and improve the agents' abilities.
-- 🧐 Planner is responsible for generating and rectifying plans for tasks. It divides tasks into subtasks and generates milestones for them, allowing agents to solve tasks step by step.
-- 🦾 Actor is responsible for conducting actions to achieve goals and finish subtasks. The actor utilizes various tools to solve subtasks, and it can also collaborate with humans to solve tasks.
 
 ### [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
