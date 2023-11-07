@@ -43,6 +43,12 @@ XAgent is composed of three parts:
 - **🧐 Planner** is responsible for generating and rectifying plans for tasks. It divides tasks into subtasks and generates milestones for them, allowing agents to solve tasks step by step.
 - **🦾 Actor** is responsible for conducting actions to achieve goals and finish subtasks. The actor utilizes various tools to solve subtasks, and it can also collaborate with humans to solve tasks.
 
+.. figure:: source/assets/loop.png
+   :align: center
+   :width: 700
+
+   The inner loop and outer loop mechanism of XAgent.
+
 .. toctree::
    :glob:
    :maxdepth: 2
@@ -55,10 +61,11 @@ XAgent is composed of three parts:
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: ToolServer Reference
 
    source/ToolServer/README
+   source/ToolServer/API
 
 .. toctree::
    :glob:

@@ -1,4 +1,4 @@
-# Differences between XAgent, AutoGPT, and OpenAgents
+# Differences between different agents
 
 > Generative agents are designed to simulate behavior in an open world, interacting with others and responding to environmental changes. They use their environment and past experiences to generate behavior.
 > 
