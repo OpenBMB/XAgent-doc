@@ -28,7 +28,7 @@ You can modify `XAgentServer/application/routers/workspace.py` (backend), `XAgen
 
 - Firewall (security groups) ,选中“Allow SSH traffic from” 
 
--云磁盘 Volumes Size修改为更大存储30GB，
+- 云磁盘 Volumes Size修改为更大存储30GB，
 
 - 其他都默认，检查配置无误后,创建虚拟机实例 “Launch instance”
   
